@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "CaMeL System Architecture & Trust Boundaries",
+    "output": "visualizations/camel-architecture.html",
+    "animation": "trace",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "control-synthesis",
+        "label": "1. Tổng hợp Kế hoạch Điều khiển",
+        "focus": ["user", "pllm", "interp"],
+        "note": "Prompt tin cậy của người dùng đi vào P-LLM để sinh mã Python AST mà không chạm vào dữ liệu ngoại vi."
+      },
+      {
+        "id": "tcb-enforcement",
+        "label": "2. Thẩm định & Chính sách An ninh",
+        "focus": ["interp", "dfg", "caps", "policy"],
+        "note": "Bộ thông dịch CaMeL tra cứu Đồ thị Luồng Dữ liệu và đối soát Thẻ Thẩm Quyền trước khi cho phép gọi tool."
+      },
+      {
+        "id": "untrusted-isolation",
+        "label": "3. Cách ly Dữ liệu Ngoại vi",
+        "focus": ["policy", "tools", "qllm", "interp"],
+        "note": "Công cụ ngoại vi trả dữ liệu thô vào Q-LLM để trích xuất theo Schema Pydantic an toàn."
+      }
+    ]
+  },
+  "components": [
+    { "id": "user", "type": "external", "label": "User", "sublabel": "Trusted Intent", "pos": [40, 240], "size": [120, 60] },
+    { "id": "pllm", "type": "backend", "label": "Privileged LLM", "sublabel": "Plan Synthesizer", "pos": [220, 240], "size": [136, 62], "tag": "No Tool Access" },
+    { "id": "interp", "type": "backend", "label": "CaMeL Interpreter", "sublabel": "AST & State Runner", "pos": [430, 240], "size": [140, 62], "tag": "TCB Core" },
+    { "id": "dfg", "type": "database", "label": "DFG Tracker", "sublabel": "Provenance Graph", "pos": [430, 100], "size": [140, 60] },
+    { "id": "caps", "type": "security", "label": "Capability Store", "sublabel": "Allowed Readers", "pos": [430, 380], "size": [140, 60] },
+    { "id": "policy", "type": "security", "label": "Security Policies", "sublabel": "Policy Interceptor", "pos": [640, 240], "size": [136, 62], "tag": "Gatekeeper" },
+    { "id": "tools", "type": "messagebus", "label": "External Tools", "sublabel": "Email / Drive / Banking", "pos": [850, 150], "size": [140, 62] },
+    { "id": "qllm", "type": "cloud", "label": "Quarantined LLM", "sublabel": "Pydantic Parser", "pos": [850, 330], "size": [140, 62], "tag": "Zero Privileges" }
+  ],
+  "boundaries": [
+    { "kind": "security-group", "label": "Vùng Tin Cậy (Trusted User Zone)", "wraps": ["user", "pllm"] },
+    { "kind": "region", "label": "CaMeL TCB & Interpreter (Vùng Điều Phối An Toàn)", "wraps": ["interp", "dfg", "caps", "policy"] },
+    { "kind": "security-group", "label": "Môi Trường Ngoại Vi (Untrusted Environment)", "wraps": ["tools", "qllm"] }
+  ],
+  "connections": [
+    { "id": "user-to-pllm", "from": "user", "to": "pllm", "label": "prompt", "variant": "emphasis" },
+    { "id": "pllm-to-interp", "from": "pllm", "to": "interp", "label": "Python AST" },
+    { "id": "interp-to-dfg", "from": "interp", "to": "dfg", "label": "provenance", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "id": "interp-to-caps", "from": "interp", "to": "caps", "label": "readers", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "labelDy": 24 },
+    { "id": "interp-to-policy", "from": "interp", "to": "policy", "label": "verify", "variant": "security" },
+    { "id": "policy-to-tools", "from": "policy", "to": "tools", "label": "allowed", "variant": "emphasis" },
+    { "id": "tools-to-qllm", "from": "tools", "to": "qllm", "label": "raw data", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "labelDy": 24 },
+    { "id": "qllm-to-interp", "from": "qllm", "to": "interp", "label": "parsed", "fromSide": "left", "toSide": "right" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Kiểm Soát Luồng Thông Tin (IFC)",
+      "items": [
+        "Biến số được theo dõi nguồn gốc và độc giả được phép",
+        "Phân tách tuyệt đối giữa logic điều khiển và dữ liệu thô"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Kiến Trúc TCB Thu Gọn",
+      "items": [
+        "Bộ thông dịch Python tùy biến chạy trên tập con an toàn",
+        "Chính sách an ninh chặn đứng các cuộc gọi tool vi phạm"
+      ]
+    }
+  ]
+}

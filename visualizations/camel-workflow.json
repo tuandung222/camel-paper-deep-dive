@@ -1,0 +1,87 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "CaMeL Agent Security Workflow",
+    "animation": "trace",
+    "visual_preset": "signal-flow",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "benign-flow",
+        "label": "Yêu cầu đến Kết quả An toàn",
+        "focus": ["user", "pllm", "interp", "policy", "tool_call", "qllm", "cap_tag", "final_out"],
+        "note": "Theo dõi luồng xử lý từ câu lệnh người dùng qua P-LLM, bộ thông dịch, thẩm định chính sách đến công cụ ngoại vi."
+      },
+      {
+        "id": "policy-interception",
+        "label": "Chốt chặn An ninh & Từ chối",
+        "focus": ["interp", "policy", "blocked"],
+        "note": "Quan sát cách thức Chính sách An ninh phát hiện vi phạm và chặn đứng lệnh gọi công cụ trái phép."
+      },
+      {
+        "id": "quarantined-parsing",
+        "label": "Cô lập Dữ liệu Ngoại vi",
+        "focus": ["tool_call", "qllm", "cap_tag"],
+        "note": "Dữ liệu thô từ công cụ được đẩy vào Q-LLM để trích xuất cấu trúc và gắn nhãn Thẩm quyền (Capabilities)."
+      }
+    ],
+    "output": "visualizations/camel-workflow.html"
+  },
+  "lanes": [
+    { "id": "user_zone", "label": "Người Dùng (User Domain)" },
+    { "id": "pllm_zone", "label": "Privileged LLM (Control Flow)" },
+    { "id": "tcb_zone", "label": "CaMeL TCB & Interpreter", "variant": "exception" },
+    { "id": "untrusted_zone", "label": "Untrusted World (Tools & Q-LLM)" }
+  ],
+  "phases": [
+    { "id": "phase_plan", "label": "Lập Kế Hoạch (Plan-as-Code)", "fromCol": 0, "toCol": 1 },
+    { "id": "phase_verify", "label": "Thẩm Định & Kiểm Soát (Verify & Dispatch)", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "phase_exec", "label": "Cách Ly & Gắn Thẻ (Quarantine & Tag)", "fromCol": 4, "toCol": 5, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "grp_trusted", "label": "Trusted Planning", "lane": "pllm_zone", "fromCol": 0, "toCol": 1, "variant": "emphasis" },
+    { "id": "grp_tcb", "label": "Security Mediation", "lane": "tcb_zone", "fromCol": 2, "toCol": 3, "variant": "security" },
+    { "id": "grp_untrusted", "label": "Untrusted Processing", "lane": "untrusted_zone", "fromCol": 3, "toCol": 5, "variant": "dashed" }
+  ],
+  "mainPath": ["user", "pllm", "interp", "policy", "tool_call", "qllm", "cap_tag", "final_out"],
+  "nodes": [
+    { "id": "user", "lane": "user_zone", "col": 0, "type": "external", "label": "User Prompt", "sublabel": "Trusted Intent", "width": 132 },
+    { "id": "pllm", "lane": "pllm_zone", "col": 1, "type": "backend", "label": "Privileged LLM", "sublabel": "Plan-as-Code (AST)", "tag": "No Tool Access", "width": 132 },
+    { "id": "interp", "lane": "tcb_zone", "col": 2, "type": "backend", "label": "CaMeL Interpreter", "sublabel": "AST & DFG Tracker", "width": 132 },
+    { "id": "policy", "lane": "tcb_zone", "col": 3, "type": "security", "label": "Security Policy Gate", "sublabel": "Capability Check", "tag": "Interceptor", "width": 132 },
+    { "id": "blocked", "lane": "tcb_zone", "col": 4, "type": "security", "label": "Blocked / Denied", "sublabel": "Policy Violation", "width": 132 },
+    { "id": "tool_call", "lane": "untrusted_zone", "col": 3, "type": "messagebus", "label": "External Tool", "sublabel": "Email / File / Web", "tag": "API Execution", "width": 132 },
+    { "id": "qllm", "lane": "untrusted_zone", "col": 4, "type": "cloud", "label": "Quarantined LLM", "sublabel": "Pydantic Parser", "tag": "Zero Privileges", "width": 132 },
+    { "id": "cap_tag", "lane": "tcb_zone", "col": 5, "type": "database", "label": "Capability Store", "sublabel": "Provenance Tracking", "width": 132 },
+    { "id": "final_out", "lane": "user_zone", "col": 5, "type": "frontend", "label": "Safe Response", "sublabel": "Verified Result", "width": 132 }
+  ],
+  "edges": [
+    { "id": "user-to-pllm", "from": "user", "to": "pllm", "label": "intent", "variant": "emphasis" },
+    { "id": "pllm-to-interp", "from": "pllm", "to": "interp", "label": "python AST", "variant": "default" },
+    { "id": "interp-to-policy", "from": "interp", "to": "policy", "label": "verify call", "variant": "security" },
+    { "id": "policy-to-blocked", "from": "policy", "to": "blocked", "label": "denied", "variant": "security", "role": "error" },
+    { "id": "policy-to-tool", "from": "policy", "to": "tool_call", "label": "allowed", "variant": "emphasis" },
+    { "id": "tool-to-qllm", "from": "tool_call", "to": "qllm", "label": "raw data", "variant": "dashed" },
+    { "id": "qllm-to-captag", "from": "qllm", "to": "cap_tag", "label": "structured data", "variant": "default" },
+    { "id": "captag-to-final", "from": "cap_tag", "to": "final_out", "label": "deliver", "variant": "emphasis", "role": "return" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Phân Tách Luồng & Dual-LLM",
+      "items": [
+        "P-LLM chỉ sinh mã Python AST từ prompt tin cậy",
+        "Q-LLM bị cách ly, chỉ dùng để bóc tách dữ liệu Pydantic"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Chính Sách & Thẻ Thẩm Quyền",
+      "items": [
+        "Mọi tham số gọi tool đều bị chốt chặn kiểm tra thẻ quyền",
+        "Lan truyền nhãn nguồn gốc và độc giả hợp lệ qua DFG"
+      ]
+    }
+  ]
+}
