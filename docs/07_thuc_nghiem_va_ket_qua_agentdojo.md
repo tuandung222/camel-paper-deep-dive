@@ -32,9 +32,16 @@ Các mô hình ngôn ngữ lớn mạnh nhất thế giới tại thời điểm
 Một hệ thống an ninh dù an toàn đến đâu nhưng nếu làm tê liệt khả năng làm việc của AI thì cũng không thể đưa vào sản xuất. Câu hỏi đặt ra là: **CaMeL ảnh hưởng như thế nào đến khả năng hoàn thành công việc của mô hình trong điều kiện bình thường (không có tấn công)?**
 
 ```mermaid
-pie title Tỷ lệ giải quyết tác vụ trên AgentDojo
-    "Hệ thống Không phòng thủ (Undefended)" : 84
-    "Hệ thống Có CaMeL (Provable Security)" : 77
+flowchart LR
+    subgraph UtilityComp["So sánh Tỷ lệ Hoàn thành Tác vụ (Benign Utility)"]
+        direction LR
+        U1["Hệ thống Gốc (Undefended)<br/><b>84%</b> hoàn thành tác vụ"]
+        U2["Hệ thống CaMeL<br/><b>77%</b> hoàn thành tác vụ"]
+        U1 -->|"Chỉ giảm nhẹ 7% đổi lấy bảo chứng an ninh"| U2
+    end
+    style UtilityComp fill:#f0f7ff,stroke:#1890ff,stroke-width:1.5px
+    style U1 fill:#ffffff,stroke:#8c8c8c,stroke-width:1px
+    style U2 fill:#f6ffed,stroke:#52c41a,stroke-width:2px
 ```
 
 ### Kết quả nổi bật:
@@ -59,12 +66,28 @@ Trong các thử nghiệm ban đầu với Claude 3.5 Sonnet, bộ tác vụ Tra
 | **GPT-4o-mini (Native API)** | **276 ca** | **0 ca** | **Giảm 100%** |
 
 ```mermaid
-bar-chart
-    title Số ca tấn công Prompt Injection thành công trên AgentDojo
-    x-axis ["Gemini 2.5 Pro", "GPT-4o Mini", "Claude 3.5 Sonnet"]
-    y-axis "Số vụ hack thành công" 0 --> 350
-    "Không phòng thủ (Native API)" : [300, 276, 88]
-    "Được bảo vệ bởi CaMeL" : [0, 0, 0]
+flowchart TD
+    subgraph Undefended["HỆ THỐNG GỐC (NATIVE API KHÔNG PHÒNG THỦ)"]
+        direction TB
+        G1["Gemini 2.5 Pro: 300 ca bị tấn công thành công"]
+        O1["GPT-4o Mini: 276 ca bị tấn công thành công"]
+        C1["Claude 3.5 Sonnet: 88 ca bị tấn công thành công"]
+    end
+
+    subgraph Defended["KHI ĐƯỢC BẢO VỆ BỞI CAMEL"]
+        direction TB
+        G2["Gemini 2.5 Pro: 0 ca (Giảm 100%)"]
+        O2["GPT-4o Mini: 0 ca (Giảm 100%)"]
+        C2["Claude 3.5 Sonnet: 0 ca (Giảm 100%)"]
+    end
+
+    Undefended ==>|"Kích hoạt CaMeL TCB & Policies"| Defended
+
+    style Undefended fill:#fff1f0,stroke:#f5222d,stroke-width:2px
+    style Defended fill:#f6ffed,stroke:#52c41a,stroke-width:2px
+    style G2 fill:#e6f7ff,stroke:#1890ff,stroke-width:1.5px
+    style O2 fill:#e6f7ff,stroke:#1890ff,stroke-width:1.5px
+    style C2 fill:#e6f7ff,stroke:#1890ff,stroke-width:1.5px
 ```
 
 ### Tại sao GPT-4o-mini với Instruction Hierarchy vẫn bị hack 276 lần?
