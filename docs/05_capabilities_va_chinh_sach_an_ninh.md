@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 5.2, Section 5.3 & Appendix E — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 04: Bộ Thông Dịch Python Tùy Biến](04_bo_thong_dich_python_noi_bo.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 06: Đồ Thị Luồng: NORMAL vs STRICT ➡️](06_do_thi_luong_du_lieu_normal_vs_strict.md)
+
+</div>
+---
 
 ## 1. Nguồn Gốc Khái Niệm Thẻ Thẩm Quyền (Capability)
 
@@ -138,3 +144,11 @@ Nguyên tắc này bảo đảm rằng: **Chỉ cần một biến bị pha tạ
 ---
 
 *Chương tiếp theo sẽ đi sâu vào cách thức Bộ thông dịch CaMeL xây dựng Đồ thị Luồng Dữ liệu (Data Flow Graph) và so sánh sự khác biệt sống còn giữa hai chế độ: NORMAL Mode vs STRICT Mode.*
+
+---
+<div align="center">
+
+[⬅️ Chương 04: Bộ Thông Dịch Python Tùy Biến](04_bo_thong_dich_python_noi_bo.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 06: Đồ Thị Luồng: NORMAL vs STRICT ➡️](06_do_thi_luong_du_lieu_normal_vs_strict.md)
+
+</div>
+---

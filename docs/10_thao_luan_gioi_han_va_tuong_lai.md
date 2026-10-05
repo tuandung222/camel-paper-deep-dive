@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 9, Section 10 & Section 11 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 09: Rogue User & Spy Tool](09_kich_ban_mo_rong_rogue_user_va_spy_tool.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; *(Đây là chương kết thúc)*
+
+</div>
+---
 
 ## 1. Bài Học Lịch Sử: Rào Cản Triển Khai Hệ Thống Dựa Trên Thẩm Quyền
 
@@ -87,3 +93,11 @@ Bài báo **"CaMeL: Defeating Prompt Injections by Design"** đã đánh dấu m
 ---
 
 *Hết chuỗi chuyên đề 10 chương đọc hiểu paper CaMeL.*
+
+---
+<div align="center">
+
+[⬅️ Chương 09: Rogue User & Spy Tool](09_kich_ban_mo_rong_rogue_user_va_spy_tool.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; *(Đây là chương kết thúc)*
+
+</div>
+---

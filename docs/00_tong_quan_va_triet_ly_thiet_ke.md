@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 1 & Section 2 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+*(Đây là chương mở đầu)* &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 01: Giới Hạn Phòng Thủ & Mô Hình Willison ➡️](01_gioi_han_phong_thu_va_mo_hinh_willison.md)
+
+</div>
+---
 
 ## 1. Sự Trỗi Dậy Của LLM Agents & Điểm Yếu Chí Tử
 
@@ -122,3 +128,11 @@ flowchart TD
 ---
 
 *Chương tiếp theo sẽ đi sâu vào phân tích nguồn gốc của mẫu hình Dual-LLM do Simon Willison đề xuất năm 2023 và chỉ ra lỗ hổng chết người khiến Dual-LLM nguyên bản vẫn bị tấn công.*
+
+---
+<div align="center">
+
+*(Đây là chương mở đầu)* &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 01: Giới Hạn Phòng Thủ & Mô Hình Willison ➡️](01_gioi_han_phong_thu_va_mo_hinh_willison.md)
+
+</div>
+---

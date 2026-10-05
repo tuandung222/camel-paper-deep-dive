@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 5.4 & Appendix H — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 03: Kiến Trúc Cốt Lõi CaMeL](03_kien_truc_camel_va_phan_tach_luong.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 05: Thẻ Thẩm Quyền & Policies ➡️](05_capabilities_va_chinh_sach_an_ninh.md)
+
+</div>
+---
 
 ## 1. Tại Sao Phải Xây Dựng Một Bộ Thông Dịch Riêng?
 
@@ -105,3 +111,11 @@ Nhóm tác giả cũng rất trung thực khi chỉ ra hạn chế hiện tại 
 ---
 
 *Chương tiếp theo sẽ đi sâu vào "trái tim" bảo mật của CaMeL: Hệ thống Thẻ Thẩm Quyền (Capabilities) và cách cài đặt các Chính Sách An Ninh (Security Policies).*
+
+---
+<div align="center">
+
+[⬅️ Chương 03: Kiến Trúc Cốt Lõi CaMeL](03_kien_truc_camel_va_phan_tach_luong.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 05: Thẻ Thẩm Quyền & Policies ➡️](05_capabilities_va_chinh_sach_an_ninh.md)
+
+</div>
+---

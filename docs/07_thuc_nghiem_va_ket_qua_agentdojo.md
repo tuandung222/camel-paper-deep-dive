@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 6 & Appendix C, E, F, G — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 06: Đồ Thị Luồng: NORMAL vs STRICT](06_do_thi_luong_du_lieu_normal_vs_strict.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 08: Tấn Công Kênh Phụ (Side-Channels) ➡️](08_phan_tich_kenh_phu_va_cac_don_tan_cong_nang_cao.md)
+
+</div>
+---
 
 ## 1. Giới Thiệu Benchmark Chuẩn AgentDojo
 
@@ -95,3 +101,11 @@ CaMeL bảo vệ an toàn bằng cách yêu cầu P-LLM sinh mã nguồn và đ�
 ---
 
 *Chương tiếp theo sẽ đưa chúng ta đến phần hấp dẫn nhất về mặt nghiên cứu an ninh: Các đòn tấn công Kênh phụ (Side-Channel Attacks) và cách kẻ tấn công cố gắng xuyên thủng CaMeL.*
+
+---
+<div align="center">
+
+[⬅️ Chương 06: Đồ Thị Luồng: NORMAL vs STRICT](06_do_thi_luong_du_lieu_normal_vs_strict.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 08: Tấn Công Kênh Phụ (Side-Channels) ➡️](08_phan_tich_kenh_phu_va_cac_don_tan_cong_nang_cao.md)
+
+</div>
+---

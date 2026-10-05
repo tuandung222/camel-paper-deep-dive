@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 5.4.2 & Appendix D — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 05: Thẻ Thẩm Quyền & Policies](05_capabilities_va_chinh_sach_an_ninh.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 07: Thực Nghiệm Trên AgentDojo ➡️](07_thuc_nghiem_va_ket_qua_agentdojo.md)
+
+</div>
+---
 
 ## 1. Duy Trì Đồ Thị Luồng Dữ Liệu (Data Flow Graph - DFG)
 
@@ -100,3 +106,11 @@ flowchart TD
 | **Khuyến nghị sử dụng** | Môi trường văn phòng thông thường (Workspace) | Môi trường tài chính, ngân hàng, quốc phòng |
 
 Trong chương tiếp theo, chúng ta sẽ xem xét các kết quả thực nghiệm chi tiết trên benchmark AgentDojo để chứng minh hiệu quả thực tế của CaMeL.
+
+---
+<div align="center">
+
+[⬅️ Chương 05: Thẻ Thẩm Quyền & Policies](05_capabilities_va_chinh_sach_an_ninh.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 07: Thực Nghiệm Trên AgentDojo ➡️](07_thuc_nghiem_va_ket_qua_agentdojo.md)
+
+</div>
+---

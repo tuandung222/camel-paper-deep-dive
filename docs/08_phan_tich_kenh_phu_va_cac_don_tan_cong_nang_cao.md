@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 6.4, Section 7 & Appendix I — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 07: Thực Nghiệm Trên AgentDojo](07_thuc_nghiem_va_ket_qua_agentdojo.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 09: Rogue User & Spy Tool ➡️](09_kich_ban_mo_rong_rogue_user_va_spy_tool.md)
+
+</div>
+---
 
 ## 1. Tư Duy Đối Kháng Của Giới Nghiên Cứu An Ninh
 
@@ -94,3 +100,11 @@ Mặc dù các đòn tấn công kênh phụ chứng minh rằng CaMeL chưa th�
 ---
 
 *Chương tiếp theo sẽ mở rộng phạm vi nghiên cứu sang hai kịch bản hiểm họa thực tế trong doanh nghiệp: Khi chính người dùng là kẻ phản bội (Rogue User) hoặc công cụ được cài đặt bị cài lén mã gián điệp (Spy Tool).*
+
+---
+<div align="center">
+
+[⬅️ Chương 07: Thực Nghiệm Trên AgentDojo](07_thuc_nghiem_va_ket_qua_agentdojo.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 09: Rogue User & Spy Tool ➡️](09_kich_ban_mo_rong_rogue_user_va_spy_tool.md)
+
+</div>
+---

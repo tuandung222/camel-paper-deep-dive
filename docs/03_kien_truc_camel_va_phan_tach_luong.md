@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 5 & Section 5.1 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 02: Trò Chơi An Ninh PI-SEC](02_mo_hinh_an_ninh_tro_choi_pi_sec.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 04: Bộ Thông Dịch Python Tùy Biến ➡️](04_bo_thong_dich_python_noi_bo.md)
+
+</div>
+---
 
 ## 1. Sáu Thành Phần Trụ Cột Của CaMeL
 
@@ -134,3 +140,11 @@ tools.email.send_email(
    *Biến `doc_content` có nguồn gốc từ đâu? Ai được phép đọc nó? Biến `recipient` có bị nhiễm độc từ nguồn không tin cậy không?*
 
 Để hiểu cách bộ thông dịch thực hiện kiểm tra này trong thời gian thực, chúng ta sẽ cùng khám phá cấu trúc bên trong của Bộ thông dịch Python tùy biến ở Chương 04.
+
+---
+<div align="center">
+
+[⬅️ Chương 02: Trò Chơi An Ninh PI-SEC](02_mo_hinh_an_ninh_tro_choi_pi_sec.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 04: Bộ Thông Dịch Python Tùy Biến ➡️](04_bo_thong_dich_python_noi_bo.md)
+
+</div>
+---

@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 3 & Section 4 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 01: Giới Hạn Phòng Thủ & Mô Hình Willison](01_gioi_han_phong_thu_va_mo_hinh_willison.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 03: Kiến Trúc Cốt Lõi CaMeL ➡️](03_kien_truc_camel_va_phan_tach_luong.md)
+
+</div>
+---
 
 ## 1. Tại Sao Cần Hình Thức Hóa Bài Toán An Ninh Cho AI Agent?
 
@@ -119,3 +125,11 @@ Thay vì cố gắng liệt kê danh sách tĩnh $\Omega_{\mathsf{prompt}}$, ki�
 2. **Cơ chế Thẻ Thẩm quyền (Capabilities) & Chính sách An ninh (Security Policies):** Đảm bảo mỗi khi một công cụ được gọi với tham số `args`, bộ thông dịch sẽ kiểm tra các điều kiện an ninh toán học dựa trên nguồn gốc của biến số đó.
 
 Trong chương tiếp theo, chúng ta sẽ mổ xẻ chi tiết 6 khối kiến trúc cốt lõi của CaMeL và cách thức các khối này phối hợp để giải bài toán $\text{PI-SEC}$.
+
+---
+<div align="center">
+
+[⬅️ Chương 01: Giới Hạn Phòng Thủ & Mô Hình Willison](01_gioi_han_phong_thu_va_mo_hinh_willison.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 03: Kiến Trúc Cốt Lõi CaMeL ➡️](03_kien_truc_camel_va_phan_tach_luong.md)
+
+</div>
+---

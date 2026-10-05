@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 8 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 08: Tấn Công Kênh Phụ (Side-Channels)](08_phan_tich_kenh_phu_va_cac_don_tan_cong_nang_cao.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 10: Thảo Luận, Giới Hạn & Tương Lai ➡️](10_thao_luan_gioi_han_va_tuong_lai.md)
+
+</div>
+---
 
 ## 1. Vượt Ra Khỏi Mô Hình Prompt Injection Thông Thường
 
@@ -102,3 +108,11 @@ Hai kịch bản trên chứng minh rằng: **CaMeL không chỉ là một công
 ---
 
 *Chương cuối cùng của chuỗi chuyên đề sẽ thảo luận về các rào cản triển khai trong thế giới thực, hiện tượng "mệt mỏi bảo mật" của người dùng, và những hướng nghiên cứu tương lai đầy hứa hẹn.*
+
+---
+<div align="center">
+
+[⬅️ Chương 08: Tấn Công Kênh Phụ (Side-Channels)](08_phan_tich_kenh_phu_va_cac_don_tan_cong_nang_cao.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 10: Thảo Luận, Giới Hạn & Tương Lai ➡️](10_thao_luan_gioi_han_va_tuong_lai.md)
+
+</div>
+---

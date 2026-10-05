@@ -3,6 +3,12 @@
 > **Tham chiếu bài báo gốc:** Section 2 & Appendix A.2 — [arXiv:2503.18813v2](https://arxiv.org/abs/2503.18813)
 
 ---
+<div align="center">
+
+[⬅️ Chương 00: Bức Tranh Toàn Cảnh & Triết Lý Hệ Thống](00_tong_quan_va_triet_ly_thiet_ke.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 02: Trò Chơi An Ninh PI-SEC ➡️](02_mo_hinh_an_ninh_tro_choi_pi_sec.md)
+
+</div>
+---
 
 ## 1. Mẫu Thiết Kế Dual-LLM Của Simon Willison (2023)
 
@@ -124,3 +130,11 @@ Chính vì vậy, một hệ thống an ninh toàn diện không thể chỉ d�
 ---
 
 *Chương tiếp theo sẽ trình bày cơ sở toán học và mô hình hóa hình thức của bài toán an ninh này thông qua Trò chơi An ninh PI-SEC.*
+
+---
+<div align="center">
+
+[⬅️ Chương 00: Bức Tranh Toàn Cảnh & Triết Lý Hệ Thống](00_tong_quan_va_triet_ly_thiet_ke.md) &nbsp; | &nbsp; [🏠 Danh Mục Chuyên Đề](../README.md) &nbsp; | &nbsp; [Chương 02: Trò Chơi An Ninh PI-SEC ➡️](02_mo_hinh_an_ninh_tro_choi_pi_sec.md)
+
+</div>
+---
